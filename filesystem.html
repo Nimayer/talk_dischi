@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gestione del Software</title>
+    <title>Filesystem e Dischi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
     <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
@@ -16,87 +16,65 @@ name: dark
 layout: true
 class: center, dark
 ---
-#Gestione del Software
-##Installazione e gestione repository
 <br/>
-###Niccolò Izzo
+#Filesystem e Dischi
+##Problemi e soluzioni
+###Federico Amedeo Izzo
 ```html
-izzo.niccolo@gmail.com
+federico.izzo42@gmail.com
 ```
 ###<img src="img/newlogo.png" alt="POuL Logo" style="height: 4em; margin-top: 1em">
 ---
+<br/><br/>
 #Benvenuti
-<br/>
-###Qui trovate queste slide
+<br/><br/>
+###Queste slides sono disponibili su
 ```html
-software.izzo.ovh
+filesystem.izzo.ovh
 ```
-<br/><br/><br/><br/><br/><br/>
-##Fate tante domande!
 ---
 name:sign
 layout:true
 class:dark
-.sign[Niccolò Izzo]
+.sign[Federico Amedeo Izzo]
 .course-right[Corsi Linux Avanzati 2015 - [POuL](https://poul.org)]
 ---
 
-name:argomenti
-.title[###Oggi vedremo come]
+name:problemi
+.title[##Problemi:]
 --
-.middle[.text[#Installare il Software]]
+<!--Impara a usare questa cosa .middle[.text[##test]] -->
+<!--Impara a usare anche .dark[]-->
+- ##Disk failure e silent data corruption
 --
-<br/><br/><br/>
-.text[#Gestire i repository]
+<br/><br/>
+- ##Privacy dei dati
+--
+<br/><br/>
+- ##Volume management
+--
+<br/><br/>
+- ##Snapshot / Backup
+<!--Per chiudere a manina una lista si può usare </ul>-->
 ---
-
-.title[##Compilazione]
+.title[##Disk failure]
 <br/>
 --
 .dark[
-###Pro
-- Codice ottimizzato e personalizzato
-- Possibile il controllo sui sorgenti
-</ul>
-]
+###Usando un disco singolo, l'affidabilità del sistema dipende da questo
+###bla bla bla
+##C'è una soluzione:
 --
-.dark[
-###Contro
-- Lenta per software complessi
-- Non tiene traccia del software
-<br/><br/><br/>
-]
---
-
-.dark[###Anche se in alcuni casi è l'unica possibilità.]
----
-
-.title[##I pacchetti precompilati]
-<br/>
---
-
-.dark[
-###Principalmente sono due:
-- .rpm per RHEL, Fedora e le loro derivate
-- .deb per Debian, Ubuntu e le loro derivate
-]
---
-<br/>
-.dark[
-###Ma esistono anche
-- .tgz per Slackware
-- .pkg.tar.xz per Arch Linux
+##RAID
 ]
 ---
-.dark[##Le operazioni base]
-<br/>
---
+.title[##Silent data corruption]
+###Dati statistici
+---
 
-.center[Per installare un pacchetto]
-```
-dpkg -i pacchetto.deb
-```
 
+
+<!-- FINE TESTO -->
 
     </textarea>
     <script src="js/progress.min.js" type="text/javascript"></script>
