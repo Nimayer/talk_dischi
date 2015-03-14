@@ -40,7 +40,7 @@ class:dark
 .course-right[Corsi Linux Avanzati 2015 - [POuL](https://poul.org)]
 ---
 
-name:problemi
+name:Argomenti
 .title[##Problemi:]
 --
 <!--Impara a usare questa cosa .middle[.text[##test]] -->
@@ -57,22 +57,38 @@ name:problemi
 - ##Snapshot / Backup
 <!--Per chiudere a manina una lista si può usare </ul>-->
 ---
-.title[##Disk failure]
+name:Disk failure
+.title[##Disk failure: Gli hard disks si rompono]
+###Se un hard disk si rompe, i dati al suo interno vengono persi (a meno di un backup)
+--
+<br/><br/>
+##Una soluzione è il RAID
+###Redundant Array of Independent Disks
+####Permette di ottenere alcuni vantaggi tra:
+- ###Sopravvivenza alla rottura di uno o più dischi
+- ###Aumento di prestazioni rispetto ad un disco singolo
+---
+name:raid0
+.title[##RAID 0]
+<br/><br/>
+###<img src="img/RAID_0.svg" alt="RAID 0" style="height: 12em; position: absolute; right: 2em;">
+##Divide i dati su più dischi
+##effettuando lo _striping_
 <br/>
---
-.dark[
-###Usando un disco singolo, l'affidabilità del sistema dipende da questo
-###bla bla bla
-##C'è una soluzione:
---
-##RAID
-]
+##__pro__: alte prestazioni su R / W
+##__contro__: affidabilità __peggiore__
+##di un disco singolo
 ---
-.title[##Silent data corruption]
-###Dati statistici
----
-
-
+name:raid1
+.title[##RAID 1]
+<br/><br/>
+###<img src="img/RAID_1.svg" alt="RAID 1" style="height: 12em; position: absolute; right: 2em;">
+##Divide i dati su più dischi
+##effettuando lo _striping_
+<br/>
+##__pro__: alte prestazioni su R / W
+##__contro__: affidabilità __peggiore__
+##di un disco singolo
 
 <!-- FINE TESTO -->
 
