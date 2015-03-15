@@ -70,25 +70,84 @@ name:Disk failure
 ---
 name:raid0
 .title[##RAID 0]
-<br/><br/>
+<br/>
 ###<img src="img/RAID_0.svg" alt="RAID 0" style="height: 12em; position: absolute; right: 2em;">
 ##Divide i dati su più dischi
 ##effettuando lo _striping_
 <br/>
 ##__pro__: alte prestazioni su R / W
 ##__contro__: affidabilità __peggiore__
-##di un disco singolo
+##di un disco singolo,
+##non fault tolerant
 ---
 name:raid1
 .title[##RAID 1]
-<br/><br/>
-###<img src="img/RAID_1.svg" alt="RAID 1" style="height: 12em; position: absolute; right: 2em;">
-##Divide i dati su più dischi
-##effettuando lo _striping_
 <br/>
-##__pro__: alte prestazioni su R / W
-##__contro__: affidabilità __peggiore__
-##di un disco singolo
+###<img src="img/RAID_1.svg" alt="RAID 1" style="height: 12em; position: absolute; right: 2em;">
+##Data _mirroring_
+##tra due o più dischi
+<br/>
+##__pro__: buona velocità lettura,
+##fault tolerant
+##__contro__: velocità scrittura pari al
+##disco più lento
+---
+name:raid5
+.title[##RAID 5]
+<br/>
+###<img src="img/RAID_5.svg" alt="RAID 5" style="height: 9em; position: absolute; right: 1em;">
+##Data _striping_
+##with distributed _parity_
+<br/>
+##__pro__: lettura veloce,
+##fault tolerant
+##__contro__: scrittura lenta
+##per calcolo XOR
+---
+name:raid10
+.title[##RAID 10 (1+0)]
+###<img src="img/RAID_10.svg" alt="RAID 10" style="height: 12em; position: absolute; right: 1em;">
+<br/>
+##Data _striping_
+##between _mirrored_ disks
+<br/>
+##__pro__: Performance migliori,
+##fault tolerant
+##__contro__: almeno 4 dischi,
+##solo metà dello storage disponibile
+---
+name:silent_data_corruption
+.title[##Altri problemi]
+##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti.
+<br/>
+##__silent data corruption:__
+##Il cambiamento anche di un solo bit può portare a corruzione dei dati, che noteremo solo al momento del loro utilizzo.
+##Se non eliminato, un errore può venire replicato in un backup.
+---
+name:soluzioni
+.title[##Soluzioni]
+##è presto per buttare via il nostro RAID,
+- ##__data scrubbing:__
+## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie,
+## Non sempre è in grado di decidere quale di due dati discordanti è quello sano.
+- ##filesystem con __checksum dei blocchi__: ZFS o Btrfs
+---
+name:ZFS
+.title[#ZFS]
+##Creato da Sun Microsystems nel 2005
+##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux
+.title[#Btrfs]
+##Sviluppato da Oracle nel 2007, attualmente contribuiscono Facebook, Intel, Red Hat.
+---
+name:features
+.title[##Entrambi dispongono di features avanzate:]
+- ##CopyOnWrite
+- ##Block-level checksums (data & metadata)
+- ##Funzionalità RAID integrate
+- ##Volume management
+- ##Snapshots
+- ##Deduplication (Btrfs)
+
 
 <!-- FINE TESTO -->
 
