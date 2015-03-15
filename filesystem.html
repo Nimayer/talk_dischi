@@ -41,7 +41,8 @@ class:dark
 ---
 
 name:Argomenti
-.title[##Problemi:]
+.title[##Argomenti principali:]
+<br/>
 --
 <!--Impara a usare questa cosa .middle[.text[##test]] -->
 <!--Impara a usare anche .dark[]-->
@@ -63,8 +64,8 @@ name:Disk failure
 --
 <br/><br/>
 ##Una soluzione è il RAID
-###Redundant Array of Independent Disks
-####Permette di ottenere alcuni vantaggi tra:
+####Redundant Array of Independent Disks
+###Divide i dati su più dischi fornendo permettendo:
 - ###Sopravvivenza alla rottura di uno o più dischi
 - ###Aumento di prestazioni rispetto ad un disco singolo
 ---
@@ -111,13 +112,13 @@ name:raid10
 ##Data _striping_
 ##between _mirrored_ disks
 <br/>
-##__pro__: Performance migliori,
+##__pro__: Performance ottime,
 ##fault tolerant
-##__contro__: almeno 4 dischi,
-##solo metà dello storage disponibile
+##__contro__: richiede 4 dischi,
+##solo metà della capacità è utilizzabile.
 ---
 name:silent_data_corruption
-.title[##Altri problemi]
+.title[##Inconvenienti:]
 ##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti.
 <br/>
 ##__silent data corruption:__
@@ -125,8 +126,7 @@ name:silent_data_corruption
 ##Se non eliminato, un errore può venire replicato in un backup.
 ---
 name:soluzioni
-.title[##Soluzioni]
-##è presto per buttare via il nostro RAID,
+.title[##Soluzioni:]
 - ##__data scrubbing:__
 ## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie,
 ## Non sempre è in grado di decidere quale di due dati discordanti è quello sano.
