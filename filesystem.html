@@ -118,36 +118,53 @@ name:raid10
 ##solo metà della capacità è utilizzabile.
 ---
 name:silent_data_corruption
-.title[##Inconvenienti:]
+.title[##__Inconvenienti:__]
 ##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti.
 <br/>
-##__silent data corruption:__
+##__Silent data corruption:__
 ##Il cambiamento anche di un solo bit può portare a corruzione dei dati, che noteremo solo al momento del loro utilizzo.
 ##Se non eliminato, un errore può venire replicato in un backup.
 ---
 name:soluzioni
 .title[##Soluzioni:]
 - ##__data scrubbing:__
-## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie,
+## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie.
 ## Non sempre è in grado di decidere quale di due dati discordanti è quello sano.
-- ##filesystem con __checksum dei blocchi__: ZFS o Btrfs
+- ##__checksum dei blocchi__: 
+## filesystem come ZFS o Btrfs.
 ---
 name:ZFS
 .title[#ZFS]
-##Creato da Sun Microsystems nel 2005
-##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux
+##Creato da Sun Microsystems nel 2005.
+##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux.
 .title[#Btrfs]
 ##Sviluppato da Oracle nel 2007, attualmente contribuiscono Facebook, Intel, Red Hat.
 ---
-name:features
+name:features1
 .title[##Entrambi dispongono di features avanzate:]
-- ##CopyOnWrite
+--
+<br/>
+- ##__CopyOnWrite__
+##Quando si copia un file, sul disco vengono aggiunti solo i dati che lo distinguono dal primo
+--
+<br/>
 - ##Block-level checksums (data & metadata)
+##Viene salvato un checksum(hash) per ogni blocco di dati e metadati, viene controllato alla lettura
+--
+<br/>
 - ##Funzionalità RAID integrate
+--
+<br/>
 - ##Volume management
+--
+<br/>
 - ##Snapshots
+--
+<br/>
 - ##Deduplication (Btrfs)
-
+---
+name:cow
+.title[##Copy On Write]
 
 <!-- FINE TESTO -->
 
