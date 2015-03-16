@@ -130,7 +130,7 @@ name:soluzioni
 - ##__data scrubbing:__
 ## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie.
 ## Non sempre è in grado di decidere quale di due dati discordanti è quello sano.
-- ##__checksum dei blocchi__: 
+- ##__checksum dei blocchi__:
 ## filesystem come ZFS o Btrfs.
 ---
 name:ZFS
@@ -148,23 +148,29 @@ name:features1
 ##Quando si copia un file, sul disco vengono aggiunti solo i dati che lo distinguono dal primo
 --
 <br/>
-- ##Block-level checksums (data & metadata)
-##Viene salvato un checksum(hash) per ogni blocco di dati e metadati, viene controllato alla lettura
+- ##__Deduplication__
+##Evita di scrivere copie dello stesso dato (ZFS) o scansiona il disco per cercare duplicati (Btrfs)
+---
+name:features2
+.title[##altre features:]
+- ##__Data__ & __Metadata checksums__
+##Viene salvato un checksum(hash) per ogni blocco di dati e metadati,
+##Permette di rivelare _silent data corruption_.
 --
 <br/>
-- ##Funzionalità RAID integrate
---
+- ##__Funzionalità RAID integrate__
+##ZFS offre RAID-Z (simile a RAID5), Btrfs può creare e gestire tutti i tipi di RAID visti finora.
+##Se un checksum fallisce, ZFS e Btrfs sfruttano il RAID per recuperare in modo trasparente i dati.
+---
+name:features3
+.title[##altre features ancora:]
 <br/>
 - ##Volume management
 --
 <br/>
 - ##Snapshots
---
-<br/>
-- ##Deduplication (Btrfs)
+
 ---
-name:cow
-.title[##Copy On Write]
 
 <!-- FINE TESTO -->
 
