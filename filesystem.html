@@ -59,7 +59,7 @@ name:Argomenti
 <!--Per chiudere a manina una lista si può usare </ul>-->
 ---
 name:Disk failure
-.title[##Disk failure: Gli hard disks si rompono]
+.title[##__Disk failure: gli hard disks si rompono__]
 ###Se un hard disk si rompe, i dati al suo interno vengono persi (a meno di un backup)
 --
 <br/><br/>
@@ -115,30 +115,30 @@ name:raid10
 ##__pro__: Performance ottime,
 ##fault tolerant
 ##__contro__: richiede 4 dischi,
-##solo metà della capacità è utilizzabile.
+##solo metà della capacità è utilizzabile
 ---
 name:silent_data_corruption
 .title[##__Inconvenienti:__]
-##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti.
+##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti
 <br/>
 ##__Silent data corruption:__
-##Il cambiamento anche di un solo bit può portare a corruzione dei dati, che noteremo solo al momento del loro utilizzo.
-##Se non eliminato, un errore può venire replicato in un backup.
+##Il cambiamento anche di un solo bit può portare a corruzione dei dati, che noteremo solo al momento del loro utilizzo
+##Se non eliminato, un errore può venire replicato in un backup
 ---
 name:soluzioni
 .title[##Soluzioni:]
 - ##__data scrubbing:__
-## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie.
-## Non sempre è in grado di decidere quale di due dati discordanti è quello sano.
+## controllo periodico del disco che segnala _bad sectors_ e inconsistenze con i parity bit o tra le copie
+## Non sempre è in grado di decidere quale di due dati discordanti è quello sano
 - ##__checksum dei blocchi__:
-## filesystem come ZFS o Btrfs.
+## filesystem come ZFS o Btrfs
 ---
 name:ZFS
 .title[#ZFS]
-##Creato da Sun Microsystems nel 2005.
-##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux.
+##Creato da Sun Microsystems nel 2005
+##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux
 .title[#Btrfs]
-##Sviluppato da Oracle nel 2007, attualmente contribuiscono Facebook, Intel, Red Hat.
+##Sviluppato da Oracle nel 2007, attualmente contribuiscono Facebook, Intel, Red Hat
 ---
 name:features1
 .title[##Entrambi dispongono di features avanzate:]
@@ -149,29 +149,45 @@ name:features1
 --
 <br/>
 - ##__Deduplication__
-##Evita di scrivere copie dello stesso dato (ZFS) o scansiona il disco per cercare duplicati (Btrfs)
+##Evita di scrivere copie dello stesso dato (ZFS) o scansiona il disco per eliminare duplicati (Btrfs)
 ---
 name:features2
 .title[##altre features:]
 - ##__Data__ & __Metadata checksums__
 ##Viene salvato un checksum(hash) per ogni blocco di dati e metadati,
-##Permette di rivelare _silent data corruption_.
+##Permette di rivelare _silent data corruption_
 --
 <br/>
 - ##__Funzionalità RAID integrate__
-##ZFS offre RAID-Z (simile a RAID5), Btrfs può creare e gestire tutti i tipi di RAID visti finora.
-##Se un checksum fallisce, ZFS e Btrfs sfruttano il RAID per recuperare in modo trasparente i dati.
+##ZFS offre RAID-Z (simile a RAID5), Btrfs può creare e gestire tutti i tipi di RAID visti finora
+##Se un checksum fallisce, ZFS e Btrfs sfruttano il RAID per recuperare in modo trasparente i dati
 ---
 name:features3
 .title[##altre features ancora:]
 <br/>
-- ##Volume management
+- ##__Volume management__
+##Gestisce le partizioni in modo virtuale, permette di modificarle in modo semplice e meno rischioso
 --
 <br/>
-- ##Snapshots
-
+- ##__Snapshots__
+##Possibilità di creare un immagine dell'intero filesystem ad un dato istante (COW), e di ripristinarla o utilizzarne i file
 ---
-
+.title[##Uno sguardo alla __sicurezza__:]
+##I dati su un disco non cifrato sono accessibili avviando un'altro sistema sul PC (es: usb linux)
+#LUKS
+##Standard per la cifratura dei dischi su linux
+- ###Viene richiesta una passphrase all'avvio del pc per sbloccare il disco
+- ###Il disco è normalmente utilizzabile una volta sbloccato
+---
+.title[#LVM]
+###Un container LUKS è analogo ad una partizione (ne servirebbero diversi per root, home, swap...)
+##LVM permette di creare più partizioni logiche all'interno di un solo container, è composto da:
+- ####Physical Volume (PV): Disco o partizione utilizzabile da LVM
+- ####Volume Group (VG): Disco virtuale formato da uno o più PV (anche su dischi diversi)
+- ####Logical Volume (LV): Partizioni virtuali all'interno di un VG
+---
+.title[##Snapshots/Backup]
+#Boh.
 <!-- FINE TESTO -->
 
     </textarea>
