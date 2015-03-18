@@ -152,7 +152,7 @@ name:features1
 ##Evita di scrivere copie dello stesso dato (ZFS) o scansiona il disco per eliminare duplicati (Btrfs)
 ---
 name:features2
-.title[##altre features:]
+.title[##features II:]
 - ##__Data__ & __Metadata checksums__
 ##Viene salvato un checksum(hash) per ogni blocco di dati e metadati,
 ##Permette di rivelare _silent data corruption_
@@ -163,7 +163,7 @@ name:features2
 ##Se un checksum fallisce, ZFS e Btrfs sfruttano il RAID per recuperare in modo trasparente i dati
 ---
 name:features3
-.title[##altre features ancora:]
+.title[##features III:]
 <br/>
 - ##__Volume management__
 ##Gestisce le partizioni in modo virtuale, permette di modificarle in modo semplice e meno rischioso
@@ -173,21 +173,50 @@ name:features3
 ##Possibilità di creare un immagine dell'intero filesystem ad un dato istante (COW), e di ripristinarla o utilizzarne i file
 ---
 .title[##Uno sguardo alla __sicurezza__:]
-##I dati su un disco non cifrato sono accessibili avviando un'altro sistema sul PC (es: usb linux)
+###I dati su un disco non cifrato sono accessibili avviando un'altro sistema sul PC (es: usb linux)
 #LUKS
 ##Standard per la cifratura dei dischi su linux
 - ###Viene richiesta una passphrase all'avvio del pc per sbloccare il disco
 - ###Il disco è normalmente utilizzabile una volta sbloccato
 ---
+<br/>
+###Lo spazio libero del disco deve essere indistinguibile da quello occupato da LUKS, inoltre serve eliminare tracce dei vecchi dati non cifrati
+<br/>
+###Per questo è utile scrivere dati casuali sull'intero disco.
+> ####/dev/sdX è il disco o partizione di destinazione (fare attenzione)
+```html
+# dd if=/dev/urandom of=/dev/sdX bs=4096
+```
+
+
+---
 .title[#LVM]
-###Un container LUKS è analogo ad una partizione (ne servirebbero diversi per root, home, swap...)
-##LVM permette di creare più partizioni logiche all'interno di un solo container, è composto da:
-- ####Physical Volume (PV): Disco o partizione utilizzabile da LVM
-- ####Volume Group (VG): Disco virtuale formato da uno o più PV (anche su dischi diversi)
-- ####Logical Volume (LV): Partizioni virtuali all'interno di un VG
+###Logical Volume Management: permette di gestire le partizioni ad un livello di astrazione superiore.
+- ####Volume management e snapshot (COW)
+- ####Rinominare e raggruppare partizioni
+- ####Disk striping
+- ####Mirrored volumes
+####LVM è superfluo con Btrfs o ZFS, in quanto integrano già queste features
+---
+<br/>
+.title[##LVM è strutturato in:]
+<br/>
+- ###Physical Volume (PV):
+> ####Disco o partizione utilizzabile da LVM
+- ###Volume Group (VG):
+> ####Disco virtuale formato da uno o più PV (anche su dischi diversi)
+- ###Logical Volume (LV):
+> ####Partizioni virtuali all'interno di un VG
 ---
 .title[##Snapshots/Backup]
-#Boh.
+<br/>
+###Uno __snapshot__ è un' immagine di un intero volume, permette di ripristinare il sistema ad uno stato precedente
+###Un __backup__ fornisce una copia di dati importanti ma non copre l'intero sistema
+
+.title[##RAID is not backup]
+
+###Come abbiamo visto RAID protegge solo da alcuni fattori,
+##Un __backup__ è essenziale in ogni caso!
 <!-- FINE TESTO -->
 
     </textarea>
