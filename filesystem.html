@@ -23,7 +23,7 @@ class: center, dark
 ```html
 federico.izzo42@gmail.com
 ```
-###<img src="img/newlogo.png" alt="POuL Logo" style="height: 4em; margin-top: 1em">
+###<img src="img/newlogo.svg" alt="POuL Logo" style="height: 4em; margin-top: 1em">
 ---
 <br/><br/>
 #Benvenuti
@@ -65,7 +65,7 @@ name:Disk failure
 <br/><br/>
 ##Una soluzione è il RAID
 ####Redundant Array of Independent Disks
-###Divide i dati su più dischi fornendo permettendo:
+###Divide i dati su più dischi permettendo:
 - ###Sopravvivenza alla rottura di uno o più dischi
 - ###Aumento di prestazioni rispetto ad un disco singolo
 ---
@@ -152,7 +152,6 @@ name:features1
 ##Evita di scrivere copie dello stesso dato (ZFS) o scansiona il disco per eliminare duplicati (Btrfs)
 ---
 name:features2
-.title[##features II:]
 - ##__Data__ & __Metadata checksums__
 ##Viene salvato un checksum(hash) per ogni blocco di dati e metadati,
 ##Permette di rivelare _silent data corruption_
@@ -163,14 +162,12 @@ name:features2
 ##Se un checksum fallisce, ZFS e Btrfs sfruttano il RAID per recuperare in modo trasparente i dati
 ---
 name:features3
-.title[##features III:]
-<br/>
 - ##__Volume management__
 ##Gestisce le partizioni in modo virtuale, permette di modificarle in modo semplice e meno rischioso
 --
-<br/>
+<br/><br/>
 - ##__Snapshots__
-##Possibilità di creare un immagine dell'intero filesystem ad un dato istante (COW), e di ripristinarla o utilizzarne i file
+##Possibilità di creare un'immagine dell'intero filesystem ad un dato istante (COW), e di ripristinarla o utilizzarne i file
 ---
 .title[##Uno sguardo alla __sicurezza__:]
 ###I dati su un disco non cifrato sono accessibili avviando un'altro sistema sul PC (es: usb linux)

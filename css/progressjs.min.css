@@ -12,7 +12,7 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db
+	background-color:#ff9607
 }
 
 .progressjs-theme-blue.progressjs-end{
@@ -41,13 +41,13 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db
+	background-color:#ff9607
 }
-	
+
 .progressjs-theme-blueOverlay.progressjs-end{
 	opacity:0!important
 }
-		
+
 .progressjs-theme-blueOverlay .progressjs-percent{
 	display:none
 }
@@ -64,7 +64,7 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db
+	background-color:#ff9607
 	}
 	.progressjs-theme-blueOverlay.progressjs-end{
 		opacity:0!important
@@ -86,7 +86,7 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db;
+	background-color:#ff9607;
 	border-radius:5px
 	}
 	.progressjs-theme-blueOverlayRadius.progressjs-end{
@@ -110,7 +110,7 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db;
+	background-color:#ff9607;
 	border-radius:5px
 	}
 	.progressjs-theme-blueOverlayRadiusHalfOpacity.progressjs-end{
@@ -133,7 +133,7 @@
 	-moz-transition:all .3s ease-out;
 	-o-transition:all .3s ease-out;
 	transition:all .3s ease-out;
-	background-color:#3498db;
+	background-color:#ff9607;
 	border-radius:5px
 	}
 	.progressjs-theme-blueOverlayRadiusWithPercentBar.progressjs-end{
