@@ -12,7 +12,7 @@ h1, h2, h3, h4 {
   font-family: 'Open Sans';
   font-weight: 300;
   letter-spacing: -0.05em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.0em;
 }
 h1 { font-size: 4.5em; }
 h2 { font-size: 2em; }
@@ -36,7 +36,7 @@ code {
   border-radius: 5px;
   font-size: 15px;
   width: 80%;
-  margin-left: 4%;
+  margin-left: 10%;
 }
 .pull-left {
   float: left;
@@ -74,7 +74,7 @@ code {
 }
 .dark h1, .dark h2 {
   color: #f3f3f3;
-  line-height: 0.9em;
+  line-height: 1em;
 }
 
 

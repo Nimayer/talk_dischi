@@ -70,8 +70,7 @@ name:Disk failure
 - ###Aumento di prestazioni rispetto ad un disco singolo
 ---
 name:raid0
-.title[##RAID 0]
-<br/>
+.title[>##RAID 0]
 ###<img src="img/RAID_0.svg" alt="RAID 0" style="height: 12em; position: absolute; right: 2em;">
 ##Divide i dati su più dischi
 ##effettuando lo _striping_
@@ -82,8 +81,7 @@ name:raid0
 ##non fault tolerant
 ---
 name:raid1
-.title[##RAID 1]
-<br/>
+.title[>##RAID 1]
 ###<img src="img/RAID_1.svg" alt="RAID 1" style="height: 12em; position: absolute; right: 2em;">
 ##Data _mirroring_
 ##tra due o più dischi
@@ -94,10 +92,9 @@ name:raid1
 ##disco più lento
 ---
 name:raid5
-.title[##RAID 5]
-<br/>
-###<img src="img/RAID_5.svg" alt="RAID 5" style="height: 9em; position: absolute; right: 1em;">
+.title[>##RAID 5]
 ##Data _striping_
+###<img src="img/RAID_5.svg" alt="RAID 5" style="height: 10em; position: absolute; right: 1em;">
 ##with distributed _parity_
 <br/>
 ##__pro__: lettura veloce,
@@ -108,7 +105,6 @@ name:raid5
 name:raid10
 .title[##RAID 10 (1+0)]
 ###<img src="img/RAID_10.svg" alt="RAID 10" style="height: 12em; position: absolute; right: 1em;">
-<br/>
 ##Data _striping_
 ##between _mirrored_ disks
 <br/>
@@ -119,7 +115,7 @@ name:raid10
 ---
 name:silent_data_corruption
 .title[##__Inconvenienti:__]
-##RAID protegge solo dalla rottura di un disco, non protegge da errori R/W o dati corrotti
+##RAID può rimediare alla rottura di un disco ma non protegge da errori R/W o dati corrotti
 <br/>
 ##__Silent data corruption:__
 ##Il cambiamento anche di un solo bit può portare a corruzione dei dati, che noteremo solo al momento del loro utilizzo
@@ -135,8 +131,7 @@ name:soluzioni
 ---
 name:ZFS
 .title[#ZFS]
-##Creato da Sun Microsystems nel 2005
-##Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux
+##Creato da Sun Microsystems nel 2005, Distribuito con licenza incompatibile con GPL, problemi di integrazione nel kernel linux
 .title[#Btrfs]
 ##Sviluppato da Oracle nel 2007, attualmente contribuiscono Facebook, Intel, Red Hat
 ---
