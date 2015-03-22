@@ -39,7 +39,10 @@ class:dark
 .sign[Federico Amedeo Izzo]
 .course-right[Corsi Linux Avanzati 2015 - [POuL](https://poul.org)]
 ---
-
+name:intro
+background-image: url(img/wp3.jpg)
+#Archiviazione
+---
 name:Argomenti
 .title[##Argomenti principali:]
 <br/>
@@ -113,6 +116,12 @@ name:raid10
 ##__contro__: richiede 4 dischi,
 ##solo metà della capacità è utilizzabile
 ---
+name:domande_raid
+###<img src="img/RAID_0.svg" alt="sources" style="position: absolute; left: 5.5em; height: 7.5em; white-space: nowrap">
+###<img src="img/RAID_1.svg" alt="sources" style="position: absolute; right: 5.5em; height: 7.5em; white-space: nowrap">
+###<img src="img/RAID_5.svg" alt="sources" style="position: absolute; left: 3em; height: 7.5em; white-space: nowrap; margin-top: 10em">
+###<img src="img/RAID_10.svg" alt="sources" style="position: absolute; right: 3em; height: 10em; white-space: nowrap; margin-top: 7.5em">
+---
 name:silent_data_corruption
 .title[##__Inconvenienti:__]
 ##RAID può rimediare alla rottura di un disco ma non protegge da errori R/W o dati corrotti
@@ -162,7 +171,16 @@ name:features3
 --
 <br/><br/>
 - ##__Snapshots__
-##Possibilità di creare un'immagine dell'intero filesystem ad un dato istante (COW), e di ripristinarla o utilizzarne i file
+##Possibilità di creare un'immagine di un intero volume ad un dato istante (COW), e di ripristinarla o utilizzarne i file
+---
+name:domande_features
+##Features __ZFS__ e __Btrfs__,  domande?
+>- ###CopyOnWrite
+>- ###Deduplication
+>- ###Data & Metadata checksums
+>- ###Funzionalità RAID integrate
+>- ###Volume management
+>- ###Snapshots
 ---
 .title[##Uno sguardo alla __sicurezza__:]
 ###I dati su un disco non cifrato sono accessibili avviando un&nbsp;altro sistema sul PC (es: usb linux)

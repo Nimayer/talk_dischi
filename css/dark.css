@@ -43,13 +43,17 @@ code {
   width: 52%;
   margin-left: 3em;
 }
-.pull-right {
-  float: right;
-  width: 40%;
+.clear {
+  clear: both;
 }
 .pull-top{
   position: absolute;
   top: 6em;
+  left: 50%;
+}
+.pull-bottom{
+  position: absolute;
+  bottom: 6em;
   left: 50%;
 }
 .pull-right ~ p {
